@@ -11,7 +11,6 @@ const navigation = [
   { label: "Projects", href: "#projects", id: "projects" },
   { label: "About", href: "#about", id: "about" },
   { label: "Skills", href: "#skills", id: "skills" },
-  { label: "Experience", href: "#experience", id: "experience" },
   { label: "Contact", href: "#contact", id: "contact" },
 ] as const;
 
