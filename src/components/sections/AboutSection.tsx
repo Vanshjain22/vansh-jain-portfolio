@@ -1,7 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { BarChart3, Check, ChevronRight, Code2, Zap } from "lucide-react";
 
-const aboutStats = [{ value: "10+", label: "Projects" }, { value: "2+", label: "Years of Coding" }, { value: "5+", label: "Technologies" }, { value: "100%", label: "Dedication" }];
+const aboutStats = [{ value: "5+", label: "Projects" }, { value: "2+", label: "Years of Coding" }, { value: "10+", label: "Technologies" }, { value: "Always", label: "Building" }];
 const highlights = ["Clean, efficient and scalable code", "User-focused development approach", "Strong problem-solving skills", "Passionate about AI & SaaS", "Always learning, always building"];
 
 export function AboutSection() {

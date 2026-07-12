@@ -18,6 +18,7 @@ export type Technology = {
 export const technologies: Technology[] = [
   { name: "React", icon: "atom" },
   { name: "Next.js", icon: "triangle" },
+  { name: "JavaScript", icon: "braces" },
   { name: "TypeScript", icon: "braces" },
   { name: "Node.js", icon: "hexagon" },
   { name: "Express.js", icon: "server" },

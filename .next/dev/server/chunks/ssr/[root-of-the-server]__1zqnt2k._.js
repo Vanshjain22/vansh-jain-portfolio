@@ -15,9 +15,9 @@ __turbopack_context__.s([
 const portfolio = {
     name: "Vansh Jain",
     role: "Full Stack Developer",
-    email: "",
-    resumePath: "",
-    githubUrl: "",
+    email: "imvansh8@gmail.com",
+    resumePath: "/resume/Vansh-Jain-Resume.pdf",
+    githubUrl: "https://github.com/Vanshjain22",
     linkedinUrl: ""
 };
 }),
@@ -167,7 +167,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 const aboutStats = [
     {
-        value: "10+",
+        value: "5+",
         label: "Projects"
     },
     {
@@ -175,12 +175,12 @@ const aboutStats = [
         label: "Years of Coding"
     },
     {
-        value: "5+",
+        value: "10+",
         label: "Technologies"
     },
     {
-        value: "100%",
-        label: "Dedication"
+        value: "Always",
+        label: "Building"
     }
 ];
 const highlights = [
@@ -1152,6 +1152,10 @@ const technologies = [
     {
         name: "Next.js",
         icon: "triangle"
+    },
+    {
+        name: "JavaScript",
+        icon: "braces"
     },
     {
         name: "TypeScript",

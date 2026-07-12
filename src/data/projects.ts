@@ -6,7 +6,6 @@ export type Project = {
   technologies: string[];
   image: string;
   liveUrl: string;
-  caseStudyUrl: string;
   githubUrl: string;
 };
 
@@ -16,11 +15,10 @@ export const projects: Project[] = [
     title: "Career AI",
     category: "AI Platform",
     description:
-      "AI-powered career platform that helps users build resumes, prepare for interviews, and make smarter career decisions.",
-    technologies: ["React", "Node.js", "MongoDB", "Gemini AI"],
+      "AI-powered career platform that helps users build resumes, prepare for interviews, analyze job compatibility, and make smarter career decisions.",
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Gemini AI"],
     image: "",
-    liveUrl: "",
-    caseStudyUrl: "",
+    liveUrl: "https://genai-career-platform.vercel.app/",
     githubUrl: "",
   },
   {
@@ -29,10 +27,9 @@ export const projects: Project[] = [
     category: "Collaboration SaaS",
     description:
       "Real-time collaborative workspace for managing projects, tasks, and team workflows efficiently.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Socket.io"],
     image: "",
     liveUrl: "",
-    caseStudyUrl: "",
     githubUrl: "",
   },
 ];

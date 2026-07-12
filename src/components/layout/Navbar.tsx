@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Download, Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { portfolio } from "@/data/portfolio";
 import { Container } from "./Container";
 
 const navigation = [
@@ -106,8 +107,7 @@ export function Navbar() {
           ))}
         </nav>
         <div className="nav-actions">
-          {/* TODO: Set href to /resume.pdf when a real resume is added to public/. */}
-          <button className="resume-link" type="button" title="Resume will be available soon">
+          <button className="resume-link" type="button" title={`Add your resume at public${portfolio.resumePath} to enable this download`}>
             Download Resume <Download aria-hidden="true" size={14} />
           </button>
           <button className="icon-button" type="button" onClick={toggleTheme} aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}>
@@ -127,7 +127,7 @@ export function Navbar() {
                   {label}
                 </Link>
               ))}
-              <button className="mobile-resume-link" type="button" title="Resume will be available soon">
+              <button className="mobile-resume-link" type="button" title={`Add your resume at public${portfolio.resumePath} to enable this download`}>
                 Download Resume <Download aria-hidden="true" size={15} />
               </button>
             </Container>
