@@ -42,7 +42,6 @@ export function SelectedWork() {
             <p className="eyebrow">Featured Work</p>
             <h2 id="work-title">Selected Work</h2>
           </div>
-          <div className="explore-link">Explore all projects →</div>
         </div>
 
         <div className="project-grid">

@@ -20,6 +20,7 @@ export function AboutSection() {
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 priority
+                unoptimized
                 className="portrait-placeholder__image"
               />
             </div>

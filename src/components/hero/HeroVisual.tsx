@@ -14,6 +14,7 @@ export function HeroVisual() {
         <div className="laptop-screen-shell">
           <div className="laptop-camera" />
           <div className="laptop-screen">
+            <div className="laptop-screen__scanline" />
             <div className="mock-topbar"><span className="mock-brand">◉ Career AI</span><span className="mock-status">OVERVIEW</span><span className="mock-avatar" /></div>
             <div className="mock-content">
               <div className="mock-intro">
