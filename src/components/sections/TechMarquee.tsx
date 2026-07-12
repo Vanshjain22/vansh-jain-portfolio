@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Container } from "@/components/layout/Container";
 import { Atom, Braces, Database, GitBranch, Hexagon, Server, Triangle, Wind, type LucideIcon } from "lucide-react";
