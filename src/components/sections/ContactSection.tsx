@@ -29,7 +29,7 @@ export function ContactSection() {
           </motion.div>
           <motion.div className="contact-actions" {...reveal} transition={{ duration: 0.65, delay: 0.26, ease: "easeOut" }}>
             {portfolio.email ? <a className="contact-button" href={`mailto:${portfolio.email}`}>Get In Touch <ArrowRight aria-hidden="true" /></a> : <span className="contact-button is-disabled" aria-disabled="true">Get In Touch <ArrowRight aria-hidden="true" /></span>}
-            {socialLinks.length > 0 && <div className="contact-socials">{socialLinks.map(({ label, url, icon: Icon }) => <a key={label} href={url} className="social-button" aria-label={label} target={url.startsWith("http") ? "_blank" : undefined} rel={url.startsWith("http") ? "noreferrer" : undefined}><Icon aria-hidden="true" /></a>)}</div>}
+            {socialLinks.length > 0 && <div className="contact-socials">{socialLinks.map(({ label, url, icon: Icon }) => <a key={label} href={url} className="social-button" aria-label={label} target={url.startsWith("http") ? "_blank" : undefined} rel={url.startsWith("http") ? "noopener noreferrer" : undefined}><Icon aria-hidden="true" /></a>)}</div>}
           </motion.div>
         </motion.div>
       </Container>

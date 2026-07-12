@@ -4,7 +4,6 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Download, Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { portfolio } from "@/data/portfolio";
 import { Container } from "./Container";
 
 const navigation = [
@@ -107,9 +106,9 @@ export function Navbar() {
           ))}
         </nav>
         <div className="nav-actions">
-          <button className="resume-link" type="button" title={`Add your resume at public${portfolio.resumePath} to enable this download`}>
-            Download Resume <Download aria-hidden="true" size={14} />
-          </button>
+          <span className="resume-link is-disabled" aria-disabled="true" title="Resume PDF will be available soon">
+            Resume Coming Soon <Download aria-hidden="true" size={14} />
+          </span>
           <button className="icon-button" type="button" onClick={toggleTheme} aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}>
             {theme === "dark" ? <Sun aria-hidden="true" size={18} /> : <Moon aria-hidden="true" size={18} />}
           </button>
@@ -127,9 +126,9 @@ export function Navbar() {
                   {label}
                 </Link>
               ))}
-              <button className="mobile-resume-link" type="button" title={`Add your resume at public${portfolio.resumePath} to enable this download`}>
-                Download Resume <Download aria-hidden="true" size={15} />
-              </button>
+              <span className="mobile-resume-link is-disabled" aria-disabled="true" title="Resume PDF will be available soon">
+                Resume Coming Soon <Download aria-hidden="true" size={15} />
+              </span>
             </Container>
           </motion.nav>
         )}

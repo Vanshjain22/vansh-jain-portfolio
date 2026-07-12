@@ -6,14 +6,16 @@ import { ProjectCard } from "@/components/projects/ProjectCard";
 import { CareerAIVisual } from "@/components/projects/CareerAIVisual";
 import { SyncSpaceVisual } from "@/components/projects/SyncSpaceVisual";
 import { useEffect, useRef } from "react";
+import { useReducedMotion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function SelectedWork() {
   const rootRef = useRef<HTMLElement | null>(null);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined" || reducedMotion) return;
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -30,7 +32,7 @@ export function SelectedWork() {
     }, rootRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [reducedMotion]);
 
   return (
     <section ref={rootRef} id="projects" className="section selected-work" aria-labelledby="work-title">

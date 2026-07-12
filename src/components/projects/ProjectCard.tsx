@@ -21,7 +21,7 @@ export function ProjectCard({ project, variant = "left", children }: Props) {
         <div className="project-tech">{project.technologies.map((technology) => <span key={technology} className="tech-pill">{technology}</span>)}</div>
         <div className="project-actions">
           {project.liveUrl ? <a href={project.liveUrl} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo <ArrowUpRight aria-hidden="true" size={14} /></a> : <span className="btn btn-primary is-disabled" aria-disabled="true">Coming Soon <ArrowUpRight aria-hidden="true" size={14} /></span>}
-          {project.githubUrl ? <a href={project.githubUrl} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">Repository <ArrowUpRight aria-hidden="true" size={14} /></a> : <span className="btn btn-secondary is-disabled" aria-disabled="true">Case Study →</span>}
+          {project.caseStudyUrl && <a href={project.caseStudyUrl} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">Case Study <ArrowUpRight aria-hidden="true" size={14} /></a>}
         </div>
       </div>
       <div className="project-card__visual">{children}</div>

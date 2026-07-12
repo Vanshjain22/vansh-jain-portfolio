@@ -6,9 +6,8 @@ export type TechnologyIcon =
   | "server"
   | "leaf"
   | "wind"
-  | "container"
   | "git-branch"
-  | "cloud";
+  | "database";
 
 export type Technology = {
   name: string;
@@ -16,7 +15,7 @@ export type Technology = {
 };
 
 export const technologies: Technology[] = [
-  { name: "React", icon: "atom" },
+  { name: "React.js", icon: "atom" },
   { name: "Next.js", icon: "triangle" },
   { name: "JavaScript", icon: "braces" },
   { name: "TypeScript", icon: "braces" },
@@ -24,7 +23,7 @@ export const technologies: Technology[] = [
   { name: "Express.js", icon: "server" },
   { name: "MongoDB", icon: "leaf" },
   { name: "Tailwind CSS", icon: "wind" },
-  { name: "Docker", icon: "container" },
-  { name: "Git", icon: "git-branch" },
-  { name: "AWS", icon: "cloud" },
+  { name: "Git & GitHub", icon: "git-branch" },
+  { name: "REST APIs", icon: "server" },
+  { name: "Gemini AI", icon: "database" },
 ];

@@ -7,7 +7,17 @@ const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk", subsets: 
 
 export const metadata: Metadata = {
   title: "Vansh Jain | Full Stack Developer",
-  description: "Portfolio of Vansh Jain, a full stack developer building intelligent web experiences.",
+  description: "Full Stack Developer building AI-powered platforms, scalable SaaS products, and modern web experiences using React, Next.js, Node.js, and MongoDB.",
+  openGraph: {
+    title: "Vansh Jain | Full Stack Developer",
+    description: "Full Stack Developer building AI-powered platforms, scalable SaaS products, and modern web experiences using React, Next.js, Node.js, and MongoDB.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Vansh Jain | Full Stack Developer",
+    description: "Full Stack Developer building AI-powered platforms, scalable SaaS products, and modern web experiences using React, Next.js, Node.js, and MongoDB.",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -6,7 +6,7 @@ export type Project = {
   technologies: string[];
   image: string;
   liveUrl: string;
-  githubUrl: string;
+  caseStudyUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -19,7 +19,6 @@ export const projects: Project[] = [
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Gemini AI"],
     image: "",
     liveUrl: "https://genai-career-platform.vercel.app/",
-    githubUrl: "",
   },
   {
     number: "02",
@@ -30,6 +29,5 @@ export const projects: Project[] = [
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Socket.io"],
     image: "",
     liveUrl: "",
-    githubUrl: "",
   },
 ];

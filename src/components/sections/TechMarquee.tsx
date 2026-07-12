@@ -1,8 +1,8 @@
 import { Container } from "@/components/layout/Container";
-import { Atom, Braces, Cloud, Container as ContainerIcon, Database, GitBranch, Hexagon, Server, Triangle, Wind, type LucideIcon } from "lucide-react";
+import { Atom, Braces, Database, GitBranch, Hexagon, Server, Triangle, Wind, type LucideIcon } from "lucide-react";
 import { technologies, type TechnologyIcon } from "@/data/technologies";
 
-const iconMap: Record<TechnologyIcon, LucideIcon> = { atom: Atom, triangle: Triangle, braces: Braces, hexagon: Hexagon, server: Server, leaf: Database, wind: Wind, container: ContainerIcon, "git-branch": GitBranch, cloud: Cloud };
+const iconMap: Record<TechnologyIcon, LucideIcon> = { atom: Atom, triangle: Triangle, braces: Braces, hexagon: Hexagon, server: Server, leaf: Database, wind: Wind, "git-branch": GitBranch, database: Database };
 
 export function TechMarquee() {
   const marqueeItems = [...technologies, ...technologies];

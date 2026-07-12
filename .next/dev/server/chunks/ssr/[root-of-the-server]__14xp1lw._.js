@@ -73,7 +73,17 @@ var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$s
 ;
 const metadata = {
     title: "Vansh Jain | Full Stack Developer",
-    description: "Portfolio of Vansh Jain, a full stack developer building intelligent web experiences."
+    description: "Full Stack Developer building AI-powered platforms, scalable SaaS products, and modern web experiences using React, Next.js, Node.js, and MongoDB.",
+    openGraph: {
+        title: "Vansh Jain | Full Stack Developer",
+        description: "Full Stack Developer building AI-powered platforms, scalable SaaS products, and modern web experiences using React, Next.js, Node.js, and MongoDB.",
+        type: "website"
+    },
+    twitter: {
+        card: "summary",
+        title: "Vansh Jain | Full Stack Developer",
+        description: "Full Stack Developer building AI-powered platforms, scalable SaaS products, and modern web experiences using React, Next.js, Node.js, and MongoDB."
+    }
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -83,12 +93,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/src/app/layout.tsx",
-            lineNumber: 16,
+            lineNumber: 26,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 15,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 }
