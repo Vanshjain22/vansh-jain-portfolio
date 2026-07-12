@@ -1,13 +1,23 @@
-{"timestamp":"00:00:01.306","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:02:21.621","source":"Server","level":"LOG","message":"✓ Compiled in 130ms"}
-{"timestamp":"00:05:25.752","source":"Server","level":"LOG","message":"✓ Compiled in 115ms"}
-{"timestamp":"00:07:45.659","source":"Server","level":"LOG","message":"✓ Compiled in 107ms"}
-{"timestamp":"00:09:23.363","source":"Server","level":"LOG","message":"✓ Compiled in 117ms"}
-{"timestamp":"00:10:28.537","source":"Server","level":"LOG","message":"✓ Compiled in 103ms"}
-{"timestamp":"00:11:01.374","source":"Server","level":"LOG","message":"✓ Compiled in 106ms"}
-{"timestamp":"00:11:51.219","source":"Server","level":"LOG","message":"✓ Compiled in 70ms"}
-{"timestamp":"00:14:29.587","source":"Server","level":"LOG","message":"✓ Compiled in 332ms"}
-{"timestamp":"00:14:30.362","source":"Server","level":"LOG","message":"✓ Compiled in 103ms"}
-{"timestamp":"00:15:40.481","source":"Server","level":"LOG","message":"✓ Compiled in 45ms"}
-{"timestamp":"00:15:41.483","source":"Server","level":"LOG","message":"✓ Compiled in 91ms"}
-{"timestamp":"00:17:15.169","source":"Server","level":"LOG","message":"✓ Compiled in 116ms"}
+{"timestamp":"00:00:00.999","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:56:20.883","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:57:01.562","source":"Server","level":"LOG","message":"✓ Compiled in 3.7s"}
+{"timestamp":"00:57:04.580","source":"Browser","level":"WARN","message":"Image with src \"/images/vansh-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes"}
+{"timestamp":"00:57:04.646","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/images/vansh-profile.png\\\" has \\\"fill\\\" but is missing \\\"sizes\\\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\\u001b[39m\" \"\\u001b[2m(file://C:/Users/imvan/OneDrive/Desktop/Vs code/My-Portfolio/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)\\u001b[22m\""}
+{"timestamp":"00:57:04.648","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/vansh-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\u001b[39m"}
+{"timestamp":"00:57:15.992","source":"Browser","level":"WARN","message":"Image with src \"/images/vansh-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes"}
+{"timestamp":"00:57:36.224","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/images/vansh-profile.png\\\" has \\\"fill\\\" but is missing \\\"sizes\\\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\\u001b[39m\" \"\\u001b[2m(file://C:/Users/imvan/OneDrive/Desktop/Vs code/My-Portfolio/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)\\u001b[22m\""}
+{"timestamp":"00:57:36.225","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/vansh-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\u001b[39m"}
+{"timestamp":"01:01:28.960","source":"Browser","level":"WARN","message":"Image with src \"/images/vansh-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes"}
+{"timestamp":"01:01:29.065","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/images/vansh-profile.png\\\" has \\\"fill\\\" but is missing \\\"sizes\\\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\\u001b[39m\" \"\\u001b[2m(file://C:/Users/imvan/OneDrive/Desktop/Vs code/My-Portfolio/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)\\u001b[22m\""}
+{"timestamp":"01:01:29.065","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/vansh-profile.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\u001b[39m"}
+{"timestamp":"01:05:28.631","source":"Server","level":"LOG","message":"✓ Compiled in 66ms"}
+{"timestamp":"01:05:29.819","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/images/vansh-portrait-new.png\\\" has \\\"fill\\\" but is missing \\\"sizes\\\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\\u001b[39m\" \"\\u001b[2m(file://C:/Users/imvan/OneDrive/Desktop/Vs code/My-Portfolio/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)\\u001b[22m\""}
+{"timestamp":"01:05:29.820","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/vansh-portrait-new.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\u001b[39m"}
+{"timestamp":"01:05:29.820","source":"Browser","level":"WARN","message":"Image with src \"/images/vansh-portrait-new.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes"}
+{"timestamp":"01:05:30.016","source":"Browser","level":"WARN","message":"Image with src \"/images/vansh-portrait-new.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes"}
+{"timestamp":"01:06:26.247","source":"Server","level":"LOG","message":"✓ Compiled in 277ms"}
+{"timestamp":"01:07:27.271","source":"Server","level":"LOG","message":"✓ Compiled in 140ms"}
+{"timestamp":"01:09:57.493","source":"Server","level":"LOG","message":"✓ Compiled in 58ms"}
+{"timestamp":"01:14:59.242","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/images/vansh-portrait-new.png\\\" has \\\"fill\\\" but is missing \\\"sizes\\\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\\u001b[39m\" \"\\u001b[2m(file://C:/Users/imvan/OneDrive/Desktop/Vs code/My-Portfolio/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)\\u001b[22m\""}
+{"timestamp":"01:14:59.243","source":"Browser","level":"WARN","message":"\u001b[33mImage with src \"/images/vansh-portrait-new.png\" has \"fill\" but is missing \"sizes\" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes\u001b[39m"}
+{"timestamp":"01:15:33.645","source":"Server","level":"LOG","message":"✓ Compiled in 157ms"}

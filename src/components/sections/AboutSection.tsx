@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/Container";
 import { BarChart3, Check, ChevronRight, Code2, Zap } from "lucide-react";
+import Image from "next/image";
 
 const aboutStats = [{ value: "5+", label: "Projects" }, { value: "2+", label: "Years of Coding" }, { value: "10+", label: "Technologies" }, { value: "Always", label: "Building" }];
 const highlights = ["Clean, efficient and scalable code", "User-focused development approach", "Strong problem-solving skills", "Passionate about AI & SaaS", "Always learning, always building"];
@@ -12,7 +13,16 @@ export function AboutSection() {
           <div className="about-portrait" role="img" aria-label="Portrait placeholder for Vansh Jain">
             <div className="about-portrait__glow" /><div className="about-portrait__orbit about-portrait__orbit--one" /><div className="about-portrait__orbit about-portrait__orbit--two" />
             <span className="about-portrait__particle about-portrait__particle--one" /><span className="about-portrait__particle about-portrait__particle--two" /><span className="about-portrait__particle about-portrait__particle--three" />
-            <div className="portrait-placeholder"><span>VJ</span></div>
+            <div className="portrait-placeholder">
+              <Image
+                src="/images/vansh-portrait-new.png"
+                alt="Vansh Jain"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                priority
+                className="portrait-placeholder__image"
+              />
+            </div>
             <div className="portrait-badge portrait-badge--code"><Code2 aria-hidden="true" /></div><div className="portrait-badge portrait-badge--zap"><Zap aria-hidden="true" /></div><div className="portrait-badge portrait-badge--chart"><BarChart3 aria-hidden="true" /></div>
           </div>
           <div className="about-content">

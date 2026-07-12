@@ -1491,9 +1491,7 @@ h1 span, h2 span {
 }
 
 .portrait-placeholder {
-  background-image: radial-gradient(circle at 50% 42%, #34d39938, #0000 38%), linear-gradient(155deg, #0d2323d1, #040d0ff2 58%, #020607), url("/images/vansh-profile.png");
-  background-position: center;
-  background-size: cover;
+  background: #020607;
   border: 1px solid #34d39933;
   border-radius: 48% 48% 14% 14%;
   justify-content: center;
@@ -1511,6 +1509,7 @@ h1 span, h2 span {
 .portrait-placeholder:before {
   aspect-ratio: 1;
   content: "";
+  z-index: 2;
   background: radial-gradient(circle at 50% 35%, #34d3993d, #0000 63%);
   border: 1px solid #34d39947;
   border-radius: 50%;
@@ -1521,12 +1520,20 @@ h1 span, h2 span {
 
 .portrait-placeholder:after {
   content: "";
+  z-index: 2;
   background: linear-gradient(#0000, #020607);
   height: 32%;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.portrait-placeholder__image {
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  transform: scale(1.55);
 }
 
 .portrait-placeholder span {
