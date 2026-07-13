@@ -115,9 +115,15 @@ export function TechMarquee() {
 
         const opacityVal = 0.42 + intensity * 0.58;
         const scaleVal = 0.96 + intensity * 0.12;
+        const brightnessVal = 0.75 + intensity * 0.45;
+        const saturationVal = 0.9 + intensity * 0.15;
+        const glowOpacityVal = intensity;
 
         itemHtml.style.setProperty("--item-opacity", opacityVal.toFixed(3));
         itemHtml.style.setProperty("--item-scale", scaleVal.toFixed(3));
+        itemHtml.style.setProperty("--item-brightness", brightnessVal.toFixed(3));
+        itemHtml.style.setProperty("--item-saturation", saturationVal.toFixed(3));
+        itemHtml.style.setProperty("--icon-glow-opacity", glowOpacityVal.toFixed(3));
 
         // Center zone class updates
         if (distance <= pulseActivationThreshold) {

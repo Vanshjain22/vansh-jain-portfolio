@@ -50,7 +50,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--primary); }
 
 .site-container { width: min(100%, 1440px); margin-inline: auto; padding-inline: 24px; }
 .site-header {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -129,7 +129,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--primary); }
 }
 .nav-actions { display: flex; align-items: center; gap: 10px; }
 .resume-link, .icon-button { border: 1px solid var(--border); background: transparent; color: var(--foreground); transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease, transform 180ms ease; }
-.resume-link { display: inline-flex; height: 42px; align-items: center; gap: 8px; border-radius: 999px; padding: 0 19px; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; }
+.resume-link { display: none; height: 42px; align-items: center; gap: 8px; border-radius: 999px; padding: 0 19px; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; }
+@media (min-width: 900px) {
+  .resume-link { display: inline-flex; }
+}
 .resume-link.is-disabled, .mobile-resume-link.is-disabled { cursor: not-allowed; opacity: .62; }
 .icon-button { display: inline-grid; width: 42px; height: 42px; place-items: center; border-radius: 50%; cursor: pointer; }
 .resume-link:hover, .icon-button:hover { border-color: var(--border-hover); color: var(--primary); background: rgb(52 211 153 / 5%); }
@@ -819,7 +822,45 @@ h1 span, h2 span { color: var(--primary); }
 /* 375 px portrait — ensure face visible and badges don't overlap face */
 @media (max-width: 420px) { .about-portrait { min-height: 360px; }.portrait-badge { width: 46px; border-radius: 10px; }.portrait-badge svg { width: 20px; }.portrait-badge-wrapper--code { top: 18%; left: -2px; }.portrait-badge-wrapper--zap { top: 44%; right: -2px; }.portrait-badge-wrapper--chart { display: none; }.portrait-placeholder { left: 10%; width: 76%; height: 78%; }.portrait-placeholder__image { transform: scale(1.35); object-position: center 10%; }.about-highlights { padding: 18px; } }
 @media (max-width: 900px) { .contact-cta { min-height: 470px; grid-template-columns: 1fr; }.contact-copy { align-self: start; }.contact-visual { width: min(650px, 84%); right: -9%; top: 57%; }.contact-actions { right: clamp(28px, 5vw, 48px); bottom: clamp(28px, 5vw, 48px); }.footer-content { grid-template-columns: 1fr; justify-items: center; gap: 10px; text-align: center; }.footer p:last-child, .footer p:nth-child(2) { text-align: center; } }
-@media (max-width: 560px) { .contact-section { padding-top: 18px; }.contact-cta { min-height: 515px; padding: 34px 28px; border-radius: 15px; }.contact-copy h2 { font-size: clamp(2.75rem, 12vw, 3.5rem); }.contact-visual { width: 132%; max-width: none; right: -29%; top: 59%; }.contact-actions { right: 28px; bottom: 30px; }.contact-button { min-height: 46px; padding-inline: 15px; }.footer { padding-block: 25px; } }
+@media (max-width: 560px) {
+  .contact-section { padding-top: 18px; }
+  .contact-cta { min-height: 515px; padding: 34px 28px; border-radius: 15px; }
+  .contact-copy h2 { font-size: clamp(2.75rem, 12vw, 3.5rem); }
+  .contact-visual { width: 132%; max-width: none; right: -29%; top: 59%; }
+  
+  /* Stack actions vertically to resolve button/social icon overlaps on mobile */
+  .contact-actions {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 30px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .contact-button {
+    width: 100%;
+    min-height: 46px;
+    padding-inline: 15px;
+    justify-content: center;
+  }
+  .contact-socials {
+    width: 100%;
+    justify-content: center;
+  }
+  .footer { padding-block: 25px; }
+}
+
+@media (max-width: 480px) {
+  /* Stack Hero CTA buttons vertically on narrow viewports */
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-button {
+    width: 100%;
+  }
+}
 
 /* ── Hero section enhancements ────────────────────────────────────────── */
 .hero-mouse-glow {
