@@ -71,7 +71,7 @@ export function HeroSection() {
 
   // ── GSAP Animations & Parallax ──────────────────────────────────────────
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined" || !mounted) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -278,7 +278,7 @@ export function HeroSection() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [reducedMotion]);
+  }, [reducedMotion, mounted]);
 
   // ── Mouse-Reactive Ambient Glow ─────────────────────────────────────────
   useEffect(() => {
