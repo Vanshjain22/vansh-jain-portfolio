@@ -1,7 +1,0 @@
-{"timestamp":"00:00:01.090","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:05.648","source":"Browser","level":"WARN","message":"GSAP target .tech-marquee::after not found. https://gsap.com"}
-{"timestamp":"00:00:05.648","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:00:05.967","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .tech-marquee::after not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(file://C:/Users/imvan/OneDrive/Desktop/Vs code/My-Portfolio/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)\\u001b[22m\""}
-{"timestamp":"00:00:05.968","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target .tech-marquee::after not found. https://gsap.com\u001b[39m"}
-{"timestamp":"00:00:06.043","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(file://C:/Users/imvan/OneDrive/Desktop/Vs code/My-Portfolio/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)\\u001b[22m\""}
-{"timestamp":"00:00:06.043","source":"Browser","level":"WARN","message":"\u001b[33mGSAP target  not found. https://gsap.com\u001b[39m"}

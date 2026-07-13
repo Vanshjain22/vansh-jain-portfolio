@@ -16,13 +16,14 @@ const navigation = [
 type NavId = (typeof navigation)[number]["id"];
 type Theme = "dark" | "light";
 
-const NAVBAR_HEIGHT = 88;
+const NAVBAR_HEIGHT = 72;
 
 export function Navbar() {
   const [activeSection, setActiveSection] = useState<NavId>("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState<Theme>("dark");
+  
   // Guard: prevents scroll-observer from overriding a click-initiated scroll
   const isClickNavigating = useRef(false);
 
@@ -129,16 +130,24 @@ export function Navbar() {
 
   return (
     <motion.header
-      className={`site-header${isScrolled ? " is-scrolled" : ""}`}
-      initial={{ opacity: 0, y: -12 }}
+      className={`site-header${isScrolled || isMenuOpen ? " is-scrolled" : ""}`}
+      initial={{ opacity: 0, y: -72 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
     >
       <Container className="navbar">
-        <a href="#home" className="brand" aria-label="Vansh Jain — back to top" onClick={(e) => handleNavClick(e, "home")}>
+        <motion.a
+          href="#home"
+          className="brand"
+          aria-label="Vansh Jain — back to top"
+          onClick={(e) => handleNavClick(e, "home")}
+          whileHover={{ scale: 1.03, rotateY: 10 }}
+          whileTap={{ scale: 0.98 }}
+        >
           <span className="brand-mark">VJ</span>
           <span>Vansh Jain</span>
-        </a>
+        </motion.a>
+        
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navigation.map(({ label, href, id }) => (
             <a
@@ -147,49 +156,70 @@ export function Navbar() {
               href={href}
               aria-current={activeSection === id ? "page" : undefined}
               onClick={(e) => handleNavClick(e, id)}
+              style={{ position: "relative" }}
             >
-              {label}
+              {activeSection === id && (
+                <motion.span
+                  layoutId="activeNavBackground"
+                  className="nav-link-pill"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  style={{ willChange: "transform, opacity" }}
+                />
+              )}
+              <span style={{ position: "relative", zIndex: 10 }}>{label}</span>
             </a>
           ))}
         </nav>
+        
         <div className="nav-actions">
-          <a
+          <motion.a
             className="resume-link"
             href="/Vansh_Jain_Resume.pdf"
             download="Vansh_Jain_Resume.pdf"
+            whileHover={{ scale: 1.04, y: -1 }}
+            whileTap={{ scale: 0.97 }}
           >
             Download Resume <Download aria-hidden="true" size={14} />
-          </a>
-          <button
+          </motion.a>
+          
+          <motion.button
             className="icon-button"
             type="button"
             onClick={toggleTheme}
             aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+            whileHover={{ scale: 1.08, rotate: 180 }}
+            whileTap={{ scale: 0.92 }}
+            transition={{ rotate: { duration: 0.4, ease: "easeOut" } }}
           >
             {theme === "dark" ? <Sun aria-hidden="true" size={18} /> : <Moon aria-hidden="true" size={18} />}
-          </button>
-          <button
+          </motion.button>
+          
+          <motion.button
             className="icon-button mobile-menu"
             type="button"
             onClick={() => setIsMenuOpen((open) => !open)}
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.92 }}
           >
             {isMenuOpen ? <X aria-hidden="true" size={19} /> : <Menu aria-hidden="true" size={19} />}
-          </button>
+          </motion.button>
         </div>
       </Container>
+      
       <AnimatePresence>
         {isMenuOpen && (
           <motion.nav
             id="mobile-navigation"
             className="mobile-navigation"
             aria-label="Mobile navigation"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.24, ease: "easeOut" }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.28, ease: "easeInOut" }}
+            style={{ overflow: "hidden" }}
           >
             <Container className="mobile-navigation-inner">
               {navigation.map(({ label, href, id }) => (

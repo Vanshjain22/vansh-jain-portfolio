@@ -8,6 +8,55 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useReducedMotion } from "framer-motion";
 
+interface ParticleConfig {
+  id: number;
+  left: number;
+  top: number;
+  size: number;
+  color: string;
+  opacity: number;
+  duration: number;
+  delay: number;
+  driftX: number;
+  verticalTravel: number;
+  blur: number;
+  depth: 1 | 2 | 3;
+  isBubble?: boolean;
+}
+
+const heroParticles: ParticleConfig[] = [
+  { id: 1, left: 10, top: 20, size: 2, color: "#32d6a0", opacity: 0.12, duration: 18, delay: -2, driftX: 12, verticalTravel: -120, blur: 0, depth: 1 },
+  { id: 2, left: 25, top: 40, size: 3, color: "#22e6c3", opacity: 0.15, duration: 20, delay: -5, driftX: -15, verticalTravel: -150, blur: 0.5, depth: 1 },
+  { id: 3, left: 38, top: 15, size: 2, color: "#32c8ff", opacity: 0.1, duration: 16, delay: -8, driftX: 18, verticalTravel: -100, blur: 0, depth: 1 },
+  { id: 4, left: 50, top: 75, size: 3, color: "#32d6a0", opacity: 0.18, duration: 22, delay: -1, driftX: -10, verticalTravel: -160, blur: 0.8, depth: 1 },
+  { id: 5, left: 62, top: 30, size: 2, color: "rgba(230, 255, 248, 0.8)", opacity: 0.14, duration: 17, delay: -12, driftX: 14, verticalTravel: -110, blur: 0, depth: 1 },
+  { id: 6, left: 85, top: 60, size: 3, color: "#22e6c3", opacity: 0.11, duration: 19, delay: -3, driftX: -12, verticalTravel: -140, blur: 0.5, depth: 1 },
+  { id: 7, left: 15, top: 80, size: 2, color: "#32c8ff", opacity: 0.16, duration: 21, delay: -15, driftX: 10, verticalTravel: -130, blur: 0, depth: 1 },
+  { id: 8, left: 78, top: 15, size: 3, color: "#32d6a0", opacity: 0.09, duration: 18, delay: -6, driftX: -8, verticalTravel: -125, blur: 0.5, depth: 1 },
+  { id: 9, left: 92, top: 45, size: 2, color: "#22e6c3", opacity: 0.13, duration: 20, delay: -9, driftX: 15, verticalTravel: -145, blur: 0, depth: 1 },
+  { id: 10, left: 45, top: 65, size: 3, color: "#32c8ff", opacity: 0.17, duration: 22, delay: -14, driftX: -15, verticalTravel: -155, blur: 0.8, depth: 1 },
+  { id: 11, left: 5, top: 35, size: 2, color: "#32d6a0", opacity: 0.11, duration: 17, delay: -4, driftX: 12, verticalTravel: -115, blur: 0, depth: 1 },
+  { id: 12, left: 30, top: 85, size: 3, color: "#22e6c3", opacity: 0.14, duration: 19, delay: -7, driftX: -10, verticalTravel: -135, blur: 0.5, depth: 1 },
+  { id: 13, left: 55, top: 25, size: 2, color: "#32c8ff", opacity: 0.1, duration: 21, delay: -11, driftX: 16, verticalTravel: -125, blur: 0, depth: 1 },
+  { id: 14, left: 70, top: 80, size: 3, color: "rgba(230, 255, 248, 0.8)", opacity: 0.15, duration: 18, delay: -13, driftX: -14, verticalTravel: -140, blur: 0.8, depth: 1 },
+  { id: 15, left: 82, top: 38, size: 2, color: "#32d6a0", opacity: 0.12, duration: 20, delay: -16, driftX: 11, verticalTravel: -130, blur: 0, depth: 1 },
+  { id: 16, left: 20, top: 12, size: 3, color: "#22e6c3", opacity: 0.08, duration: 22, delay: -2, driftX: -9, verticalTravel: -150, blur: 0.5, depth: 1 },
+  { id: 17, left: 95, top: 70, size: 2, color: "#32c8ff", opacity: 0.16, duration: 16, delay: -5, driftX: 13, verticalTravel: -110, blur: 0, depth: 1 },
+  { id: 18, left: 18, top: 50, size: 4, color: "#32d6a0", opacity: 0.22, duration: 14, delay: -3, driftX: 15, verticalTravel: -140, blur: 0, depth: 2 },
+  { id: 19, left: 32, top: 30, size: 5, color: "#22e6c3", opacity: 0.28, duration: 15, delay: -6, driftX: -18, verticalTravel: -160, blur: 0, depth: 2, isBubble: true },
+  { id: 20, left: 42, top: 60, size: 3, color: "#32c8ff", opacity: 0.2, duration: 12, delay: -9, driftX: 12, verticalTravel: -120, blur: 0, depth: 2 },
+  { id: 21, left: 58, top: 20, size: 4, color: "rgba(230, 255, 248, 0.8)", opacity: 0.32, duration: 16, delay: -12, driftX: -14, verticalTravel: -150, blur: 0.5, depth: 2 },
+  { id: 22, left: 72, top: 70, size: 5, color: "#32d6a0", opacity: 0.26, duration: 13, delay: -1, driftX: 16, verticalTravel: -130, blur: 0, depth: 2 },
+  { id: 23, left: 80, top: 48, size: 3, color: "#22e6c3", opacity: 0.24, duration: 15, delay: -4, driftX: -10, verticalTravel: -145, blur: 0, depth: 2 },
+  { id: 24, left: 22, top: 75, size: 4, color: "#32c8ff", opacity: 0.3, duration: 17, delay: -8, driftX: 13, verticalTravel: -155, blur: 0, depth: 2 },
+  { id: 25, left: 64, top: 85, size: 5, color: "#32d6a0", opacity: 0.25, duration: 14, delay: -11, driftX: -15, verticalTravel: -135, blur: 0, depth: 2, isBubble: true },
+  { id: 26, left: 90, top: 12, size: 3, color: "#22e6c3", opacity: 0.19, duration: 12, delay: -14, driftX: 11, verticalTravel: -125, blur: 0.5, depth: 2 },
+  { id: 27, left: 16, top: 62, size: 6, color: "#32d6a0", opacity: 0.35, duration: 10, delay: -2, driftX: 20, verticalTravel: -150, blur: 1.2, depth: 3 },
+  { id: 28, left: 24, top: 15, size: 8, color: "#22e6c3", opacity: 0.24, duration: 12, delay: -5, driftX: -22, verticalTravel: -180, blur: 1.8, depth: 3, isBubble: true },
+  { id: 29, left: 54, top: 55, size: 7, color: "#32c8ff", opacity: 0.38, duration: 9, delay: -7, driftX: 15, verticalTravel: -130, blur: 1.5, depth: 3 },
+  { id: 30, left: 76, top: 62, size: 9, color: "#32d6a0", opacity: 0.28, duration: 13, delay: -12, driftX: 22, verticalTravel: -170, blur: 2.2, depth: 3, isBubble: true }
+];
+
 export function HeroSection() {
   const reducedMotion = useReducedMotion();
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -202,35 +251,28 @@ export function HeroSection() {
           ease: "none",
         });
 
-        // Ambient particles slow drift
-        gsap.utils.toArray<HTMLElement>(".ambient-particle").forEach((el, i) => {
-          const xDrift = 15 + (i * 12) % 35;
-          const yDrift = 25 + (i * 18) % 45;
-          const duration = 9 + (i * 3) % 10;
-          const delay = (i * 1.2) % 4;
+        // Background particles layer parallax
+        gsap.to(".hero-particles--background", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+          y: 35,
+          ease: "none",
+        });
 
-          gsap.to(el, {
-            x: `+=${xDrift}`,
-            y: `+=${yDrift}`,
-            opacity: gsap.utils.random(0.04, 0.22),
-            duration,
-            delay,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-          });
-
-          // Particles parallax on scroll
-          gsap.to(el, {
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top top",
-              end: "bottom top",
-              scrub: true,
-            },
-            y: -10 - (i * 7) % 25,
-            ease: "none",
-          });
+        // Foreground particles layer parallax
+        gsap.to(".hero-particles--foreground", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+          y: -45,
+          ease: "none",
         });
       }
     }, sectionRef);
@@ -285,20 +327,32 @@ export function HeroSection() {
       {/* Mouse reactive glow & fallback */}
       <div className={`hero-mouse-glow${reducedMotion ? " static-glow" : ""}`} ref={glowRef} />
 
-      {/* Subtle ambient moving particles */}
+      {/* Background Atmosphere Particles */}
       {mounted && (
-        <div className="ambient-particles">
-          {Array.from({ length: 11 }).map((_, i) => (
-            <div
-              key={i}
-              className="ambient-particle"
-              style={{
-                top: `${12 + (i * 71) % 75}%`,
-                left: `${8 + (i * 83) % 85}%`,
-                opacity: 0.06 + ((i * 11) % 13) / 100,
-              }}
-            />
-          ))}
+        <div className={`hero-particles hero-particles--background${reducedMotion ? " reduced-motion" : ""}`} aria-hidden="true">
+          {heroParticles
+            .filter((p) => p.depth !== 3)
+            .map((p) => (
+              <div
+                key={p.id}
+                className={`hero-particle depth-${p.depth}${p.isBubble ? " hero-particle__bubble" : ""}`}
+                style={{
+                  left: `${p.left}%`,
+                  top: `${p.top}%`,
+                  width: `${p.size}px`,
+                  height: `${p.size}px`,
+                  backgroundColor: p.color,
+                  opacity: p.opacity,
+                  filter: p.blur > 0 ? `blur(${p.blur}px)` : "none",
+                  boxShadow: p.opacity > 0.28 ? `0 0 5px ${p.color}` : "none",
+                  "--particle-duration": `${p.duration}s`,
+                  "--particle-delay": `${p.delay}s`,
+                  "--particle-drift-x": `${p.driftX}px`,
+                  "--particle-travel-y": `${p.verticalTravel}px`,
+                  "--item-base-opacity": p.opacity,
+                } as React.CSSProperties}
+              />
+            ))}
         </div>
       )}
 
@@ -317,6 +371,34 @@ export function HeroSection() {
           </div>
         </div>
         <HeroVisual />
+        {/* Foreground Atmosphere Particles */}
+        {mounted && (
+          <div className={`hero-particles hero-particles--foreground${reducedMotion ? " reduced-motion" : ""}`} aria-hidden="true">
+            {heroParticles
+              .filter((p) => p.depth === 3)
+              .map((p) => (
+                <div
+                  key={p.id}
+                  className={`hero-particle depth-${p.depth}${p.isBubble ? " hero-particle__bubble" : ""}`}
+                  style={{
+                    left: `${p.left}%`,
+                    top: `${p.top}%`,
+                    width: `${p.size}px`,
+                    height: `${p.size}px`,
+                    backgroundColor: p.color,
+                    opacity: p.opacity,
+                    filter: p.blur > 0 ? `blur(${p.blur}px)` : "none",
+                    boxShadow: `0 0 8px ${p.color}`,
+                    "--particle-duration": `${p.duration}s`,
+                    "--particle-delay": `${p.delay}s`,
+                    "--particle-drift-x": `${p.driftX}px`,
+                    "--particle-travel-y": `${p.verticalTravel}px`,
+                    "--item-base-opacity": p.opacity,
+                  } as React.CSSProperties}
+                />
+              ))}
+          </div>
+        )}
         <div className="scroll-indicator"><Mouse aria-hidden="true" size={19} /><span>Scroll Down</span></div>
       </Container>
     </section>

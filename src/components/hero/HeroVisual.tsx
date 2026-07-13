@@ -11,6 +11,11 @@ export function HeroVisual() {
       <div className="tech-badge badge-mongo"><Leaf size={24} /></div>
       <div className="tech-badge badge-typescript"><Braces size={23} /><span>TS</span></div>
       <div className="hero-laptop">
+        <div className="laptop-energy-particles">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div key={i} className={`laptop-particle particle-${i}`} />
+          ))}
+        </div>
         <div className="laptop-screen-shell">
           <div className="laptop-camera" />
           <div className="laptop-screen">
