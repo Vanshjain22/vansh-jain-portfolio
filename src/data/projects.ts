@@ -28,6 +28,6 @@ export const projects: Project[] = [
       "Real-time collaborative workspace for managing projects, tasks, and team workflows efficiently.",
     technologies: ["React", "Node.js", "Express.js", "MongoDB", "Socket.io"],
     image: "",
-    liveUrl: "",
+    liveUrl: "https://sync-space-web-green.vercel.app",
   },
 ];
