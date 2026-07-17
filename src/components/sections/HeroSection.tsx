@@ -188,6 +188,28 @@ export function HeroSection() {
           repeat: -1,
           ease: "sine.inOut",
         });
+
+        // Code badge float
+        gsap.to(".badge-code", {
+          y: -10,
+          rotation: -2,
+          duration: 5.8,
+          delay: 0.3,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
+
+        // Braces badge float
+        gsap.to(".badge-braces", {
+          y: 12,
+          rotation: 3,
+          duration: 6.5,
+          delay: 0.9,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
       } else {
         gsap.set(".tech-badge", { animation: "none" });
       }
@@ -250,6 +272,16 @@ export function HeroSection() {
           y: -35,
           ease: "none",
         });
+        gsap.to(".badge-code", {
+          scrollTrigger: { trigger: sectionRef.current, start: "top top", end: "bottom top", scrub: true },
+          y: -15,
+          ease: "none",
+        });
+        gsap.to(".badge-braces", {
+          scrollTrigger: { trigger: sectionRef.current, start: "top top", end: "bottom top", scrub: true },
+          y: -30,
+          ease: "none",
+        });
 
         // Background particles layer parallax
         gsap.to(".hero-particles--background", {
@@ -272,6 +304,30 @@ export function HeroSection() {
             scrub: true,
           },
           y: -45,
+          ease: "none",
+        });
+
+        // Atmospheric layers parallax (deep background)
+        gsap.to(".hero-atmosphere", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+          y: 50,
+          ease: "none",
+        });
+
+        // Bokeh layer parallax
+        gsap.to(".hero-bokeh-layer", {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+          y: 20,
           ease: "none",
         });
       }
@@ -324,6 +380,61 @@ export function HeroSection() {
 
   return (
     <section ref={sectionRef} id="home" className="hero" aria-labelledby="hero-title">
+      {/* ── Cinematic Background Atmosphere ── */}
+      <div className="hero-atmosphere" aria-hidden="true">
+        {/* Giant Celestial Planet with Cyan Crescent Rim */}
+        <div className="hero-planet" />
+
+        {/* Vertical Ray Aurora Curtain */}
+        <div className="hero-aurora-curtain">
+          <svg viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="aurora-blur" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="60" />
+              </filter>
+            </defs>
+            <g filter="url(#aurora-blur)" opacity="0.35">
+              <path d="M350 -100 L600 900 L450 900 L250 -100 Z" fill="#10b981" opacity="0.6" />
+              <path d="M470 -100 L700 900 L570 900 L370 -100 Z" fill="#14b8a6" opacity="0.8" />
+              <path d="M550 -100 L800 900 L670 900 L450 -100 Z" fill="#06b6d4" opacity="0.9" />
+              <path d="M670 -100 L870 900 L750 900 L570 -100 Z" fill="#10b981" opacity="0.75" />
+              <path d="M800 -100 L1100 900 L900 900 L700 -100 Z" fill="#6366f1" opacity="0.5" />
+              <path d="M930 -100 L1200 900 L1050 900 L850 -100 Z" fill="#a855f7" opacity="0.6" />
+            </g>
+          </svg>
+        </div>
+
+        {/* Concentric Grid Ripples */}
+        <div className="hero-grid-ripples">
+          <div className="grid-ripple ripple-1" />
+          <div className="grid-ripple ripple-2" />
+          <div className="grid-ripple ripple-3" />
+          <div className="grid-ripple ripple-4" />
+        </div>
+
+        <div className="hero-aurora" />
+        <div className="hero-aurora hero-aurora--secondary" />
+        <div className="hero-fog hero-fog--1" />
+        <div className="hero-fog hero-fog--2" />
+        <div className="hero-fog hero-fog--3" />
+        <div className="hero-spotlight hero-spotlight--1" />
+        <div className="hero-spotlight hero-spotlight--2" />
+        <div className="hero-spotlight hero-spotlight--3" />
+        <div className="hero-glass-orb hero-glass-orb--1" />
+        <div className="hero-glass-orb hero-glass-orb--2" />
+        <div className="hero-glass-orb hero-glass-orb--3" />
+        <div className="hero-glass-orb hero-glass-orb--4" />
+        <div className="hero-grid-overlay" />
+      </div>
+      <div className="hero-bokeh-layer" aria-hidden="true">
+        <div className="hero-bokeh hero-bokeh--1" />
+        <div className="hero-bokeh hero-bokeh--2" />
+        <div className="hero-bokeh hero-bokeh--3" />
+        <div className="hero-bokeh hero-bokeh--4" />
+        <div className="hero-bokeh hero-bokeh--5" />
+        <div className="hero-bokeh hero-bokeh--6" />
+      </div>
+
       {/* Mouse reactive glow & fallback */}
       <div className={`hero-mouse-glow${reducedMotion ? " static-glow" : ""}`} ref={glowRef} />
 

@@ -1,4 +1,4 @@
-import { Atom, Braces, Leaf } from "lucide-react";
+import { Atom, Braces, Leaf, Code2 } from "lucide-react";
 
 export function HeroVisual() {
   return (
@@ -10,6 +10,9 @@ export function HeroVisual() {
       <div className="tech-badge badge-node"><span>node</span></div>
       <div className="tech-badge badge-mongo"><Leaf size={24} /></div>
       <div className="tech-badge badge-typescript"><Braces size={23} /><span>TS</span></div>
+      <div className="tech-badge badge-code"><Code2 size={22} /></div>
+      <div className="tech-badge badge-braces"><span>{"{}"}</span></div>
+      <div className="laptop-halo" />
       <div className="hero-laptop">
         <div className="laptop-energy-particles">
           {Array.from({ length: 10 }).map((_, i) => (
@@ -19,6 +22,12 @@ export function HeroVisual() {
         <div className="laptop-screen-shell">
           <div className="laptop-camera" />
           <div className="laptop-screen">
+            <div className="dashboard-aurora">
+              <div className="dash-aurora-1" />
+              <div className="dash-aurora-2" />
+              <div className="dash-aurora-3" />
+              <div className="dash-aurora-4" />
+            </div>
             <div className="laptop-screen__scanline" />
             <div className="mock-topbar"><span className="mock-brand">◉ Career AI</span><span className="mock-status">OVERVIEW</span><span className="mock-avatar" /></div>
             <div className="mock-content">
